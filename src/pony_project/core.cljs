@@ -11,7 +11,7 @@
              :debug      true
              :plugins    #js [js/asepritePlugin]
              :clearColor #js [0 0 0 1]}
-   :sprites ["/resource/"
+   :sprites ["resource/"
              ["pony" "applejack.png" "applejack.json"]
              ["barrel" "barrel.png"]
              ["ground1" "ground1.png"]
