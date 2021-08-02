@@ -5,7 +5,10 @@
 (defonce kaboom (atom nil))
 (defonce state (atom {}))
 
-(defn k-start [id] (.start @kaboom id))
+(defn k-start
+  ([id] (.start @kaboom (name id)))
+  ([id n] (.start @kaboom (name id) n))
+  ([] (.start @kaboom)))
 
 (defn k-load-root [root] (when root (.loadRoot @kaboom root)))
 
