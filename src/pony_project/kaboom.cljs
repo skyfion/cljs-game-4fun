@@ -53,9 +53,11 @@
 
 (defn k-sprite [sprite]
   (when sprite
-    (if (map? sprite)
+    (cond
+      (map? sprite)
       (.sprite @kaboom (:id sprite) (clj->js (dissoc sprite :id)))
-      (.sprite @kaboom sprite))))
+      :default
+      (.sprite @kaboom (name sprite)))))
 
 (defn k-level [level params]
   (.addLevel @kaboom (clj->js params)))
@@ -86,27 +88,47 @@
         (vector? origin) (k-vec2 (get origin 0) (get origin 1))
         :default (name origin)))))
 
-(defn k-go [n] (.go @kaboom n))
+(defn k-go
+  ([id a] (.go @kaboom (name id) a))
+  ([id] (.go @kaboom (name id))))
+
+(defn k-color [c]
+  (when c
+    (let [f
+          (.color
+            @kaboom
+            (match
+              c
+              [r g b a]
+              (.rgba @kaboom r g b a)
+              [r g b]
+              (.rgb @kaboom r g b)
+              :else (clj->js c)))]
+      (js/console.log f)
+      f)))
 
 (defn map->obj [{:keys [sprite scale layer origin body pos params
-                        solid? rect text area color tag]}]
+                        solid? rect text area color tag play]}]
   (clj->js
     (vec
-      (filter identity
-              [(k-sprite sprite)
-               (when text (k-text text))
-               (when scale (k-scale scale))
-               (when layer (.layer @kaboom layer))
-               (k-origin origin)
-               (when pos (k-pos pos))
-               (when body (k-body body))
-               (when rect (k-rect rect))
-               (when-let [[x y] area] (.area @kaboom (k-vec2 (first x) (second x))
-                                             (k-vec2 (first y) (second y))))
-               (when solid? (.solid @kaboom))
-               (when color (.color @kaboom (clj->js color)))
-               (when params (clj->js params))
-               tag]))))
+      (filter
+        identity
+        [(k-sprite sprite)
+         (when text (k-text text))
+         (when scale (k-scale scale))
+         (when layer (.layer @kaboom (name layer)))
+         (k-origin origin)
+         (when pos (k-pos pos))
+         (when body (k-body body))
+         (when rect (k-rect rect))
+         (when-let [[x y] area]
+           (.area @kaboom (k-vec2 (first x) (second x))
+                  (k-vec2 (first y) (second y))))
+         (when solid? (.solid @kaboom))
+         (k-color color)
+         (when params (clj->js params))
+         (when play (.play @kaboom (name play)))
+         tag]))))
 
 (defn add-obj [obj]
   (.add @kaboom (map->obj obj)))
@@ -119,9 +141,29 @@
       (into
         {}
         (map
-          (fn [[k v]] (if (and (string? k) (map? v))
-                        [k (map->obj v)]
-                        [k v])) params)))))
+          (fn [[k v]]
+            (if (and (string? k) (map? v))
+              [k (map->obj v)]
+              [k v])) params)))))
+
+(defn map->level
+  [id {:keys [layers cam-ignore objects gravity init-fn scene-init]}]
+  (when-let [[all d] layers]
+    (k-layers all d))
+  (when cam-ignore (k-cam-ignore cam-ignore))
+  (when gravity (.gravity @kaboom gravity))
+
+  (when scene-init
+    (scene-init @kaboom))
+
+  ; add objects in state
+  (doseq [{:keys [obj-id] :as param} objects]
+    (let [obj (add-obj param)]
+      (when id
+        (swap! state assoc-in [id obj-id] obj))))
+
+  (when init-fn
+    (init-fn @kaboom (get @state id))))
 
 (defn init [{:keys [params sprites scenes]}]
   (reset! kaboom (js/kaboom (clj->js params)))
@@ -130,23 +172,12 @@
            [id res json] (k-load-aseprite id res json)
            [id res] (k-load-sprite id res)
            :else (k-load-root s)))
-  (doseq [[id {:keys [layers cam-ignore objects gravity init-fn scene-init]}] scenes]
-    (.scene @kaboom id
-            (fn []
-              (when-let [[all d] layers]
-                (k-layers all d))
-              (when cam-ignore (k-cam-ignore cam-ignore))
-              (when gravity (.gravity @kaboom gravity))
 
-              (when scene-init
-                (scene-init @kaboom))
-
-              ; add objects
-              (doseq [{:keys [obj-id] :as param} objects]
-                (let [obj (add-obj param)]
-                  (when id
-                    (swap! state assoc-in [id obj-id] obj))))
-
-              (when init-fn
-                (init-fn @kaboom (get @state id))))))
+  (doseq [[id level] scenes]
+    (.scene
+      @kaboom (name id)
+      (cond
+        (map? level) #(map->level id level)
+        (fn? level) #(map->level id (level %))
+        :else (throw (js/Error. "something went wrong...")))))
   @kaboom)
