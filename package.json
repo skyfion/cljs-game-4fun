@@ -9,8 +9,7 @@
   "devDependencies": {
     "shadow-cljs": "^2.11.11"
   },
-
   "dependencies": {
-    "kaboom": "^0.5.1"
+    "phaser": "^3.55.2"
   }
 }
