@@ -1,0 +1,274 @@
+{ "frames": [
+   {
+    "filename": "applejack-Recovered 0.gif",
+    "frame": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 1.gif",
+    "frame": { "x": 114, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 2.gif",
+    "frame": { "x": 228, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 3.gif",
+    "frame": { "x": 342, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 4.gif",
+    "frame": { "x": 456, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 5.gif",
+    "frame": { "x": 570, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 6.gif",
+    "frame": { "x": 684, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 7.gif",
+    "frame": { "x": 798, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 8.gif",
+    "frame": { "x": 912, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 9.gif",
+    "frame": { "x": 1026, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 10.gif",
+    "frame": { "x": 1140, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 11.gif",
+    "frame": { "x": 1254, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 12.gif",
+    "frame": { "x": 1368, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 13.gif",
+    "frame": { "x": 1482, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 14.gif",
+    "frame": { "x": 1596, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 15.gif",
+    "frame": { "x": 1710, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 16.gif",
+    "frame": { "x": 1824, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 17.gif",
+    "frame": { "x": 1938, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 18.gif",
+    "frame": { "x": 2052, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 19.gif",
+    "frame": { "x": 2166, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 20.gif",
+    "frame": { "x": 2280, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 21.gif",
+    "frame": { "x": 2394, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 22.gif",
+    "frame": { "x": 2508, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 23.gif",
+    "frame": { "x": 2622, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 24.gif",
+    "frame": { "x": 2736, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 25.gif",
+    "frame": { "x": 2850, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 26.gif",
+    "frame": { "x": 2964, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   },
+   {
+    "filename": "applejack-Recovered 27.gif",
+    "frame": { "x": 3078, "y": 0, "w": 114, "h": 89 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 114, "h": 89 },
+    "sourceSize": { "w": 114, "h": 89 },
+    "duration": 50
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.x-dev",
+  "image": "applejack-Recovered.png",
+  "format": "I8",
+  "size": { "w": 3192, "h": 89 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "long-jump", "from": 2, "to": 19, "direction": "forward" },
+   { "name": "jump", "from": 6, "to": 19, "direction": "forward" },
+   { "name": "move", "from": 20, "to": 27, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
