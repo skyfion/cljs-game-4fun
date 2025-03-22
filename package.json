@@ -7,10 +7,9 @@
     "clean": "rm -rf target; rm -rf public/js/compiled"
   },
   "devDependencies": {
-    "shadow-cljs": "^2.11.11"
+    "shadow-cljs": "^2.28.21"
   },
-
   "dependencies": {
-    "kaboom": "^0.5.1"
+    "kaboom": "^3000.1.17"
   }
 }
