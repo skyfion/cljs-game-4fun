@@ -2,6 +2,8 @@
   (:require [pony-project.kaboom :as kaboom]
             [pony-project.const :as const]))
 
+(def speed 150)
+
 (def scene
   {:layers     [["bg" "game" "ui"] "game"]
    :cam-ignore ["ui" "bg"]
@@ -19,8 +21,10 @@
                           :size 12}
                  :layer  "ui"
                  :pos    [25 9]}
+
                 {:rect   (fn [ka] [(.width ka) 20])
                  :solid? true
+                 :color  [68 74 1]
                  :pos    (fn [ka] [0 (/ (* (.height ka) 80) 100)])}
                 {:obj-id :player
                  :sprite "pony"
@@ -31,21 +35,40 @@
                  :origin "center"
                  :tag    "pony"
                  :scale  0.3
-                 :params {:speed 100}}]
+                 :params {:speed speed}}]
    :scene-init (fn []
-                 (let [move-fn
-                       (fn [k obj]
-                         (when obj
-                           (.move obj -100 0)
-                           (when (< (.-x (.-pos obj)) (/ (* -1 (.width k)) 2))
-                             (.destroy k obj))))]
+                 (letfn
+                   [(move-fn [k obj]
+                      (when obj
+                        (.move obj (* -1 speed) 0)
+                        (when (< (.-x (.-pos obj)) (/ (* -1 (.width k)) 2))
+                          (.destroy k obj))))]
                    (kaboom/k-action "barrel" move-fn)
                    (kaboom/k-action "tree" move-fn)
+                   (kaboom/k-action "grass" move-fn)
                    (kaboom/k-action "apple" move-fn))
+
+                 (doseq [n (range (+ (quot (.width @kaboom/kaboom) 94) 5))]
+
+                   #_(kaboom/add-obj
+                       {:pos    (fn [k] [(* 64 n)
+                                         (/ (* (.height k) 110) 100)])
+                        :sprite "ground1"
+                        :origin "botright"
+                        :tag    "grass"
+                        :layer  "game"}))
 
                  (kaboom/k-loop
                    1
                    (fn []
+                     #_(kaboom/add-obj
+                         {:pos    (fn [k] [(- (.width @kaboom/kaboom) 64)
+                                           (/ (* (.height k) 110) 100)])
+                          :sprite "ground1"
+                          :origin "botright"
+
+                          :tag    "grass"
+                          :layer  "game"})
 
                      (when (rand-nth [true false])
                        (kaboom/add-obj
@@ -66,23 +89,19 @@
                           :tag    "tree"
                           :origin "bot"}))
 
-                     (when (rand-nth [true false])
-                       (kaboom/add-obj
-                         {:pos    (fn [k] [(+ (.width @kaboom/kaboom) 50)
-                                           (/ (* (.height k) 70) 100)])
-                          :sprite "apple"
-                          :layer  "game"
-                          :tag    "apple"
-                          }))
-
-                     )))
+                     (kaboom/add-obj
+                       {:pos    (fn [k] [(+ (.width @kaboom/kaboom) 50)
+                                         (/ (* (.height k) 74) 100)])
+                        :sprite :apple
+                        :layer  "game"
+                        :scale  0.6
+                        :tag    "apple"
+                        }))))
 
    :init-fn    (fn [k state]
 
                  (kaboom/k-action
                    #(.camPos % (kaboom/k-vec2 (/ (.width %) 2) (/ (.height %) 2))))
-
-
 
                  (when-let [player (:player state)]
 
