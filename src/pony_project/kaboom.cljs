@@ -6,9 +6,15 @@
 (defonce state (atom {}))
 
 (defn k-start
-  ([id] (.start @kaboom (name id)))
-  ([id n] (.start @kaboom (name id) n))
-  ([] (.start @kaboom)))
+  ([id] 
+   (js/console.log "k-start called with id:" (name id))
+   (.start @kaboom (name id)))
+  ([id n] 
+   (js/console.log "k-start called with id and n:" (name id) n)
+   (.start @kaboom (name id) n))
+  ([] 
+   (js/console.log "k-start called with no args")
+   (.start @kaboom)))
 
 (defn k-load-root [root] (when root (.loadRoot @kaboom root)))
 
@@ -163,6 +169,7 @@
         (swap! state assoc-in [id obj-id] obj))))
 
   (when init-fn
+
     (init-fn @kaboom (get @state id))))
 
 (defn init [{:keys [params sprites scenes]}]
